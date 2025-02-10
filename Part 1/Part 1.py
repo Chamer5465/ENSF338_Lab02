@@ -14,8 +14,8 @@ def testslowfib():
     testsizes=[]
     for j in range(0,35):
         testsizes.append(j)
-        totalTime = timeit.timeit(lambda: originalfib(j), number = 1)
-        averageTime.append(totalTime/1)
+        totalTime = timeit.timeit(lambda: originalfib(j), number = 1000)
+        averageTime.append(totalTime/1000)
 
     slope, intercept = np.polyfit(testsizes, averageTime, 1)
 
@@ -42,8 +42,8 @@ def testfastfib():
     testsizes=[]
     for j in range(0,35):
         testsizes.append(j)
-        totalTime = timeit.timeit(lambda: fastfib(j), number = 1)
-        averageTime.append(totalTime/1)
+        totalTime = timeit.timeit(lambda: fastfib(j), number = 1000)
+        averageTime.append(totalTime/1000)
 
     slope, intercept = np.polyfit(testsizes, averageTime, 1)
 
@@ -63,3 +63,11 @@ def testfastfib():
 if __name__=="__main__":
     testfastfib()
     testslowfib()
+
+
+#1) The code snippet is a Fibonacci sequence generator 
+#2) Yes, it can be considered a divide and conquer as it simplifies each calculation by calling itself.
+#3) The time complexity of recursive Fibonacci is O(n^2)
+ 
+
+#5)The time complexity Fibonacci sequence using memoization is O(n)
